@@ -1,0 +1,139 @@
+python-argh (0.26.2-2) unstable; urgency=medium
+
+  * Team upload.
+  * Inject packaging into Salsa
+  * Standards-Version: 4.6.0 (routine-update)
+  * debhelper-compat 13 (routine-update)
+  * Point Vcs fields to salsa.debian.org (routine-update)
+  * Testsuite: autopkgtest-pkg-python (routine-update)
+  * Secure URI in copyright format (routine-update)
+  * Drop ancient X-Python-Version field (routine-update)
+  * Add salsa-ci file (routine-update)
+  * Rules-Requires-Root: no (routine-update)
+  * Use secure URI in Homepage field.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+  * watch file standard 4 (routine-update)
+  * Fix test conditions
+    Closes: #997470
+
+ -- Andreas Tille <tille@debian.org>  Mon, 01 Nov 2021 13:22:50 +0100
+
+python-argh (0.26.2-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Drop python2 support; Closes: #937581
+
+ -- Sandro Tosi <morph@debian.org>  Wed, 16 Oct 2019 22:22:06 -0400
+
+python-argh (0.26.2-1) unstable; urgency=medium
+
+  * New upstream version 0.26.2
+  * Drop 0001-fix-unit-tests.patch
+  * Avoid depending on iocapture module for testing
+  * Fix a typo in long description (found by lintian)
+  * Bump standards-version to 3.9.8.0 (no changes)
+  * Switch to debhelper compatibility version 9
+  * Use an encrypted transport protocol for the Vcs-* URIs
+  * Acknowledge the NMUs from Sean Whitton. Thanks for your contribution.
+
+ -- Marco Nenciarini <mnencia@debian.org>  Fri, 16 Dec 2016 15:53:36 +0100
+
+python-argh (0.26.1-1.2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Drop parts of 0001-fix-unit-tests.patch touching test_interaction.py.
+  * Fix the Unicode encoding test by setting LC_ALL in d/rules.
+    This fix is more general as the LANG var can be overridden by LC_*
+    vars (see locale(7)).  Thanks to Jakub Wilk for pointing this out and
+    suggesting the improved fix.
+
+ -- Sean Whitton <spwhitton@spwhitton.name>  Fri, 12 Aug 2016 10:58:57 -0700
+
+python-argh (0.26.1-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Update 0001-fix-unit-tests.patch for newer sbuild (Closes: #832851).
+    The LANG environment variable might not be set.
+
+ -- Sean Whitton <spwhitton@spwhitton.name>  Thu, 11 Aug 2016 11:58:52 -0700
+
+python-argh (0.26.1-1) unstable; urgency=medium
+
+  [ Marco Nenciarini ]
+  * Imported Upstream version 0.26.1
+  * Fix some unit tests to not fail in a clean build environment
+  * Update debian/watch
+  * Bump standards-version to 3.9.6.0 (no changes)
+
+  [ Brian May ]
+  * Python3 package (Closes: 778446)
+
+ -- Marco Nenciarini <mnencia@debian.org>  Tue, 17 Feb 2015 05:50:19 +0100
+
+python-argh (0.25.0-1) unstable; urgency=medium
+
+  * Imported Upstream version 0.25.0
+
+ -- Marco Nenciarini <mnencia@debian.org>  Thu, 09 Oct 2014 03:27:42 +0200
+
+python-argh (0.24.1-1) unstable; urgency=medium
+
+  * Imported Upstream version 0.24.1
+  * Bump standards-version to 3.9.5.0 (no changes)
+
+ -- Marco Nenciarini <mnencia@debian.org>  Wed, 29 Jan 2014 23:20:05 +0100
+
+python-argh (0.23.2-1) unstable; urgency=low
+
+  * Imported Upstream version 0.23.2
+  * Canonicalize VCS-* field URI in debian/control
+
+ -- Marco Nenciarini <mnencia@debian.org>  Tue, 18 Jun 2013 11:37:49 +0200
+
+python-argh (0.23.0-1) unstable; urgency=low
+
+  * Imported Upstream version 0.23.0
+
+ -- Marco Nenciarini <mnencia@debian.org>  Fri, 08 Feb 2013 17:21:37 +0100
+
+python-argh (0.21.2-1) unstable; urgency=low
+
+  * Imported Upstream version 0.21.2
+  * Add python-argcomplete as recommended
+
+ -- Marco Nenciarini <mnencia@debian.org>  Fri, 11 Jan 2013 02:20:12 +0100
+
+python-argh (0.21.1-1) unstable; urgency=low
+
+  * debian/control: Add X-Python-Version: >= 2.6 to fix build on squeeze
+  * Add support for build on Ubuntu Lucid (10.4)
+  * Imported Upstream version 0.21.1
+  * Remove argh/six.py license from debian/copyright as the file was
+    removed upstream
+
+ -- Marco Nenciarini <mnencia@debian.org>  Fri, 04 Jan 2013 18:44:06 +0100
+
+python-argh (0.17.2-1) unstable; urgency=low
+
+  * Imported Upstream version 0.17.2
+
+ -- Marco Nenciarini <mnencia@debian.org>  Tue, 27 Nov 2012 22:16:30 +0100
+
+python-argh (0.16.0-1) unstable; urgency=low
+
+  * Imported Upstream version 0.16.0
+
+ -- Marco Nenciarini <mnencia@debian.org>  Mon, 22 Oct 2012 16:39:30 +0200
+
+python-argh (0.15.1-2) unstable; urgency=low
+
+  * Add argh/six.py license to debian/copyright file
+
+ -- Marco Nenciarini <mnencia@debian.org>  Sun, 30 Sep 2012 18:40:08 +0200
+
+python-argh (0.15.1-1) unstable; urgency=low
+
+  * Initial release (Closes: #689019)
+
+ -- Marco Nenciarini <mnencia@debian.org>  Fri, 28 Sep 2012 12:34:24 +0200

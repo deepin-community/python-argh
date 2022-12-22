@@ -1,0 +1,34 @@
+Author: Andreas Tille <tille@debian.org>
+Last-Update: Mon, 01 Nov 2021 11:14:41 +0100
+Bug-Debian: https://bugs.debian.org/997470
+Description: Fix test conditions
+
+--- a/test/test_integration.py
++++ b/test/test_integration.py
+@@ -377,7 +377,7 @@ def test_invalid_choice():
+     p = DebugArghParser()
+     p.add_commands([cmd])
+ 
+-    assert run(p, 'bar', exit=True).startswith('invalid choice')
++    assert run(p, 'bar', exit=True).find('invalid choice') >= 0
+ 
+     if sys.version_info < (3,3):
+         # Python before 3.3 exits with a less informative error
+@@ -391,7 +391,7 @@ def test_invalid_choice():
+     p = DebugArghParser()
+     p.add_commands([cmd], namespace='nest')
+ 
+-    assert run(p, 'nest bar', exit=True).startswith('invalid choice')
++    assert run(p, 'nest bar', exit=True).find('invalid choice') >= 0
+ 
+     if sys.version_info < (3,3):
+         # Python before 3.3 exits with a less informative error
+@@ -511,7 +511,7 @@ def test_explicit_cmd_name():
+ 
+     p = DebugArghParser()
+     p.add_commands([orig_name])
+-    assert run(p, 'orig-name', exit=True).startswith('invalid choice')
++    assert run(p, 'orig-name', exit=True).find('invalid choice') >= 0
+     assert run(p, 'new-name').out == 'ok\n'
+ 
+ 

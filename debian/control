@@ -1,0 +1,46 @@
+Source: python-argh
+Maintainer: Debian Python Team <team+python@tracker.debian.org>
+Uploaders: Marco Nenciarini <mnencia@debian.org>
+Section: python
+Testsuite: autopkgtest-pkg-python
+Priority: optional
+Build-Depends: debhelper-compat (= 13),
+               dh-python,
+               python3-all,
+               python3-setuptools,
+               python3-pytest,
+               python3-mock
+Standards-Version: 4.6.0
+Vcs-Browser: https://salsa.debian.org/python-team/packages/python-argh
+Vcs-Git: https://salsa.debian.org/python-team/packages/python-argh.git
+Homepage: https://pypi.python.org/pypi/argh
+Rules-Requires-Root: no
+
+Package: python3-argh
+Architecture: all
+Depends: ${misc:Depends},
+         ${python3:Depends}
+Recommends: python3-argcomplete
+Description: simple argparse wrapper (Python 3)
+ Argh provides a very simple wrapper for argparse.
+ .
+ Argparse is a very powerful tool; argh just makes it easy to use.
+ .
+ Here’s a list of features that argh adds to argparse:
+ .
+  * mark a function as a CLI command and specify its arguments before
+    the parser is instantiated;
+  * nested commands made easy: no messing with subparsers;
+  * infer command name from function name;
+  * infer argument type from the default value;
+  * infer argument action from the default value (for booleans);
+  * infer arguments from function signature;
+  * add an alias root command help for the --help argument;
+  * enable passing unwrapped arguments to certain functions instead of
+    an argparse.Namespace object.
+ .
+ Argh is fully compatible with argparse. You can mix argh-agnostic and
+ argh-aware code. Just keep in mind that dispatch() does some extra
+ work that a custom dispatcher may not do.
+ .
+ This package installs the library for Python 3.

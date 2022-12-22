@@ -1,0 +1,48 @@
+From: Marco Nenciarini <mnencia@debian.org>
+Date: Fri, 16 Dec 2016 15:21:42 +0100
+Subject: Avoid depending on iocapture
+
+---
+ setup.py                 | 2 +-
+ test/test_integration.py | 8 ++++----
+ 2 files changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/setup.py b/setup.py
+index 064dad6..674c2fd 100755
+--- a/setup.py
++++ b/setup.py
+@@ -82,7 +82,7 @@ setup(
+     install_requires = install_requires,
+ 
+     # testing
+-    tests_require = ['pytest', 'mock', 'iocapture'],
++    tests_require = ['pytest', 'mock'],
+     cmdclass = {'test': PyTest},
+ 
+     # copyright
+diff --git a/test/test_integration.py b/test/test_integration.py
+index 8899d8e..02470f8 100644
+--- a/test/test_integration.py
++++ b/test/test_integration.py
+@@ -7,7 +7,7 @@ import sys
+ import re
+ import argparse
+ 
+-import iocapture
++import py
+ import mock
+ import pytest
+ 
+@@ -772,9 +772,9 @@ def test_prog():
+ 
+     usage = get_usage_string()
+ 
+-    with iocapture.capture() as captured:
+-        assert run(p, '-h', exit=True) == None
+-        assert captured.stdout.startswith(usage)
++    capture = py.io.StdCapture()
++    assert run(p, '-h', exit=True) == None
++    assert capture.reset()[0].startswith(usage)
+ 
+ 
+ def test_unknown_args():
