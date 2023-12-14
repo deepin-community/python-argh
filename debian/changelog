@@ -1,3 +1,17 @@
+python-argh (0.28.1-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream version
+  * Standards-Version: 4.6.2 (routine-update)
+  * Build-Depends: s/dh-python/dh-sequence-python3/ (routine-update)
+  * Add missing build-dependency on flit.
+  * refresh patches
+  * d/control: build-dep on pybuild-plugin-pyproject for PEP-517 compat.
+  * d/control: use real homepage, not PyPI
+  * d/watch: use https
+
+ -- Michael R. Crusoe <crusoe@debian.org>  Wed, 16 Aug 2023 13:03:33 +0200
+
 python-argh (0.26.2-2) unstable; urgency=medium
 
   * Team upload.

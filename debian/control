@@ -5,15 +5,16 @@ Section: python
 Testsuite: autopkgtest-pkg-python
 Priority: optional
 Build-Depends: debhelper-compat (= 13),
-               dh-python,
+               dh-sequence-python3,
                python3-all,
-               python3-setuptools,
+               pybuild-plugin-pyproject,
                python3-pytest,
-               python3-mock
-Standards-Version: 4.6.0
+               python3-mock,
+               flit
+Standards-Version: 4.6.2
 Vcs-Browser: https://salsa.debian.org/python-team/packages/python-argh
 Vcs-Git: https://salsa.debian.org/python-team/packages/python-argh.git
-Homepage: https://pypi.python.org/pypi/argh
+Homepage: https://github.com/neithere/argh
 Rules-Requires-Root: no
 
 Package: python3-argh
