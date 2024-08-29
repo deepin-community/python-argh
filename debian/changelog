@@ -1,3 +1,25 @@
+python-argh (0.31.2-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream version 0.31.2
+  * remove extraneous python3-mock build-dep
+
+ -- Alexandre Detiste <tchet@debian.org>  Wed, 21 Feb 2024 12:35:16 +0100
+
+python-argh (0.28.1-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream version
+  * Standards-Version: 4.6.2 (routine-update)
+  * Build-Depends: s/dh-python/dh-sequence-python3/ (routine-update)
+  * Add missing build-dependency on flit.
+  * refresh patches
+  * d/control: build-dep on pybuild-plugin-pyproject for PEP-517 compat.
+  * d/control: use real homepage, not PyPI
+  * d/watch: use https
+
+ -- Michael R. Crusoe <crusoe@debian.org>  Wed, 16 Aug 2023 13:03:33 +0200
+
 python-argh (0.26.2-2) unstable; urgency=medium
 
   * Team upload.
